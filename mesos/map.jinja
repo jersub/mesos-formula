@@ -1,0 +1,12 @@
+{% set mesos = {
+  'package': 'mesos',
+  'common_conf_dir': '/etc/mesos',
+  'master': {
+    'service': 'mesos-master',
+    'conf_dir': '/etc/mesos-master'
+  },
+  'slave': {
+    'service': 'mesos-slave',
+    'conf_dir': '/etc/mesos-slave'
+  }
+} %}

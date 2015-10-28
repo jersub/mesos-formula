@@ -1,0 +1,20 @@
+mesos:
+  services:
+    master:
+      conf:
+        log_dir: /var/log/mesos
+        ip: 0.0.0.0
+        port: "5050"
+        zk: "zk://127.0.0.1:2181/mesos"
+        quorum: "1"
+        work_dir: /var/lib/mesos
+      env: {}
+    slave:
+      conf:
+        log_dir: /var/log/mesos
+        ip: 0.0.0.0
+        port: "5051"
+        master: zk://127.0.0.1:2181/mesos
+        containerizers: docker,mesos
+        executor_registration_timeout: 5mins
+      env: {}
